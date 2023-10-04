@@ -11,11 +11,10 @@ int main()
     // 2차원 배열에 난수를 저장합니다.
     for (int i = 0; i < numCell; i++) 
     {
-        for (int j = 0; j < numCell; j++) 
+        for (int j = 0; j < numCell; j++)  
         {
-            int elem = rand() % 1000;;
             numlist[i][j] = rand() % 1000;
-            cout << i << ", " << j << " : " << numlist[i][j]<< endl;
+            cout << i << "," << j << " : " << numlist[i][j]<< endl;
 
         }
     }
@@ -29,17 +28,19 @@ int main()
     int maxI = 0; // 큰 값이 있는  i를 저장하기 위한 변수
     int maxJ = 0; //큰 값이 있는 j를 저장하기 위한 변수
     for (int i = 0; i < numCell; i++)
-    {
+    { 
+        int j = 0;
         for ( auto var : numlist[i])
         {
-            int j = 0;
-            j++;
+     
             if ( var > max)
             {
                 max = numlist[i][j];
                 maxI = i;
                 maxJ = j;
             }
+            j++;
+
         }
     }
       
