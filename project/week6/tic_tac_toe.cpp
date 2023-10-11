@@ -109,7 +109,7 @@ int main() {
 
         // 승리자가 결정되었으면 해당 플레이어를 출력하고 게임을 종료한다.
         if (isWin == true) {
-            cout << k % 2 + 1 << "번 유저(" << currentUser << ")의  승리입니다!" << endl;
+            cout << k % 2   << "번 유저(" << currentUser << ")의  승리입니다!" << endl;
             break;
         }
     }
