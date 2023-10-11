@@ -10,14 +10,11 @@ int main() {
     int x, y = 0; // 사용자에게 xy좌표값을 입력받기 위한 변수
     // 보드판 초기화
 
-    for (x = 0; x < numCell; x++)
-    {
-        for (y = 0; x < numCell; y++) {
-            board[x][y] = ' ';
+    for (int i = 0; i < numCell; i++) {
+        for (int j = 0; j < numCell; j++) {
+            board[i][j] = ' ';
         }
-
     }
-
     // 게임을 무한 반복
     while (true) {
         // 1. 누구 차례인지 출력
@@ -116,8 +113,6 @@ int main() {
             break;
         }
     }
-  
-
 
     return 0;
 }
