@@ -17,3 +17,4 @@ int main()
 		cout << "프로그램을 종료합니다." << endl;
 	// 프로그램 종료
 	return 0;
+}
