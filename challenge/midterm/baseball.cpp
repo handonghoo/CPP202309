@@ -4,6 +4,17 @@
 #include <ctime>
 using namespace std;
 
+int start = 0;
+
+// 모든 수가 다른지 체크하는 함수
+void checknumber(int firstNum, int secondNum, int thirdNum) {
+    
+    if ((firstNum != secondNum) && (firstNum != thirdNum) && (secondNum != thirdNum)) {
+        start = 1;
+    }
+    
+}
+
 int main() {
     srand(static_cast<unsigned int>(time(NULL)));
 
@@ -15,7 +26,7 @@ int main() {
     while (1) {
         randomNum = rand() % 900 + 100;
 
-        int start = 0;
+        
 
         // 3자리 숫자의 자릿수를 추출
         firstNum = randomNum / 100;
@@ -23,8 +34,11 @@ int main() {
         thirdNum = randomNum % 10;
 
         // 모든 수가 다른지 체크
-        if ((firstNum != secondNum) && (firstNum != thirdNum) && (secondNum != thirdNum)) {
-            start = 1;
+        checknumber(firstNum, secondNum, thirdNum);
+
+
+
+        if (start == 1) {
             break;
         }
         else {
@@ -46,7 +60,7 @@ int main() {
             cout << "세자리 수를 입력해주세요: ";
             cin >> userNumber;
 
-            int start = 0;
+        
 
             // 3자리 숫자의 자릿수를 추출
             guessFirst = userNumber / 100;
@@ -54,17 +68,18 @@ int main() {
             guessThird = userNumber % 10;
 
             // 모든 수가 다른지 체크
+
             if (to_string(userNumber).length() != 3) {
                 cout << "입력된 숫자가 3자리 수가 아닙니다. 다시 입력하세요." << endl;
                 continue;
             }
-            else if ((guessFirst != guessSecond) && (guessFirst != guessThird) && (guessSecond != guessThird)) {
-                start = 1;
+
+            checknumber(guessFirst, guessSecond, guessThird);
+
+            if (start == 1) {
                 break;
             }
-            else {
-                cout << "전제가 틀렸네요" << endl;
-            }
+            
         }
 
         int strike = 0;
