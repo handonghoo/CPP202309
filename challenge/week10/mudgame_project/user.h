@@ -9,7 +9,7 @@ using namespace std;
 		
 	public:
 		int hp;   // 유저 체력을 저장할 변수
-
+ 
 		void DecreaseHP(int usermove);
 		int GetHP(int userhp);
 	};
